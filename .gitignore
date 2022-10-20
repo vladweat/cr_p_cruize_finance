@@ -3,5 +3,7 @@ mails.txt
 ready.txt
 twitters.txt
 wallets.txt
+refer.txt
 
 .env
+.pyc

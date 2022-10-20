@@ -1,5 +1,6 @@
 import os
 import time
+from sys import argv
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -8,7 +9,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-URL = "https://form.waitlistpanda.com/go/vVGRjdIyHpU1eOCI83x6?ref=de0ORQmV7S35fFymfC7U"
+URL = ""
+
+script, num_of_accounts = argv
+
 start_time = time.time()
 
 
@@ -30,7 +34,7 @@ for wallet in wallets:
     tmp = wallet.split(" ")[0]
     addresses.append(tmp)
 
-for i in range(5):
+for i in range(int(num_of_accounts)):
     options = webdriver.ChromeOptions()
     options.add_argument("--lang=en-US")
     browser = webdriver.Chrome(ChromeDriverManager().install(), options=options)
